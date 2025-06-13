@@ -84,9 +84,50 @@ h1 {
 }
 
 .win-message {
-  margin-top: 2rem;
-  font-size: 1.25rem;
-  color:#945cb4;
-  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.win-content {
+  background-color: #b3d8ef;
+  padding: 2rem;
+  border-radius: 15px;
   text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 3px solid #2972b6;
+}
+
+.win-content h2 {
+  font-size: 3rem;
+  color: #945cb4;
+  margin-bottom: 1rem;
+}
+
+.win-content p {
+  font-size: 1.2rem;
+  color: #001d4f;
+  margin-bottom: 1.5rem;
+}
+
+.reset-btn {
+  background-color: #2972b6;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-btn:hover {
+  background-color: #1e5a94;
 }

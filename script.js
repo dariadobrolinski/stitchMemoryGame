@@ -50,6 +50,9 @@ class MemoryGame {
         this.cards.forEach(card => {
             card.addEventListener('click', () => this.flipCard(card));
         });
+        
+        const resetButton = document.querySelector('#resetButton');
+        resetButton.addEventListener('click', () => this.resetGame());
     }
 
     flipCard(card) {
@@ -118,8 +121,24 @@ class MemoryGame {
 
     handleWin() {
         setTimeout(() => {
-            this.winMessage.style.display = 'block';
+            this.winMessage.style.display = 'flex';
         }, 500);
+    }
+
+    resetGame() {
+        this.winMessage.style.display = 'none';
+        
+        this.flippedCards = [];
+        this.matchedPairs = 0;
+        this.canFlip = true;
+        
+        this.cards.forEach(card => {
+            card.classList.remove('flipped', 'matched', 'fade-out');
+            card.style.opacity = '';
+            card.style.visibility = '';
+        });
+        
+        this.setUpCards();
     }
 }
 
